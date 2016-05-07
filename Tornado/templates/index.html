@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <a href="./login">登录</a>
+    <a href="./weibo/add">发布微博</a>
+    <a href="./register">注册</a>
+    <a href="./user">个人中心</a><br><br>
+    <ul>
+    	{% for content in weibo_contents %}
+    		<li>用户名: {{content['user']}}</li>
+    		<li>微博内容: {{content['content']}}</li><br><br>
+    	{% end %}
+    </ul>
+</body>
+</html>

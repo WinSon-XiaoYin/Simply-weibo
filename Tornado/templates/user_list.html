@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <ul>
+        {% for user in users %}
+            <li>{{user["account"]}} <a href="/follow?follow_user={{user['account']}}">关注</a></li>
+        {% end %}
+    </ul>
+   	<a href="./">首页</a>
+    <a href="./followed">已关注用户</a>
+</body>
+</html>
