@@ -5,10 +5,11 @@
     <title></title>
 </head>
 <body>
-    <a href="./login">登录</a>
-    <a href="./weibo/add">发布微博</a>
-    <a href="./register">注册</a>
-    <a href="./user">个人中心</a><br><br>
+    <a href="/login">登录</a>
+    <a href="/weibo/add">发布微博</a>
+    <a href="/register">注册</a>
+    <a href="/user">个人中心</a>
+    <a href="/out">退出</a><br><br>
     <ul>
     	{% for content in weibo_contents %}
     		<li>用户名: {{content['user']}}</li>

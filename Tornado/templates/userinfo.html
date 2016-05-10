@@ -6,10 +6,11 @@
 </head>
 <body>
     <h1>hi, {{user}}</h1>
-    <a href="./">首页</a>
-    <a href="./weibo/add">发布微博</a>
-   	<a href="./users">未关注用户</a>
-   	<a href="./followed">已关注用户</a>
+    <a href="/">首页</a>
+    <a href="/weibo/add">发布微博</a>
+   	<a href="/users">未关注用户</a>
+   	<a href="/followed">已关注用户</a>
+    <a href="/out">退出</a>
    	<ul>
    		{% for content in contents %}
     		<li>用户名: {{content['user']}}</li>

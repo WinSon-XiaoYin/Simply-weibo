@@ -128,6 +128,12 @@ class LoginHandler(BaseHandler):
         self.set_secure_cookie("user", user['account'])
         self.redirect("/user")
 
+class OutHandler(BaseHandler):
+    @tornado.web.authenticated
+    def get(self):
+        self.set_secure_cookie("user", "")
+        self.redirect('/login')
+
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -140,6 +146,7 @@ class Application(tornado.web.Application):
             (r'/users', UsersHandler),
             (r'/follow', FollowHandler),
             (r'/followed', FollowedHandler),
+            (r'/out', OutHandler),
         ]
         settings = dict(
             cookie_secret="61oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2XdTp1o/Vo=",
@@ -154,5 +161,6 @@ class Application(tornado.web.Application):
 if __name__ == "__main__":
     tornado.options.parse_command_line()
     http_server = tornado.httpserver.HTTPServer(Application())
-    http_server.listen(options.port)
+    print "Server start on port " + str(options.port)
+    http_server.listen(options.port, address="0.0.0.0")
     tornado.ioloop.IOLoop.instance().start()

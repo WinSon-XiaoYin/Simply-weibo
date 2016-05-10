@@ -5,13 +5,14 @@
     <title></title>
 </head>
 <body>
+    <a href="/">首页</a>
+    <a href="/users">未关注用户</a>
+    <a href="/out">退出</a>
     <h1>已关注</h1>
     <ul>
         {% for user in follow_users %}
             <li>{{user["follow_user"]}}</li>
         {% end %}
     </ul>
-    <a href="./">首页</a>
-    <a href="./users">未关注用户</a>
 </body>
 </html>
